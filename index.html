@@ -3,364 +3,552 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Manh Le Portfolio</title>
-
+<title>Manh Le — Full Stack Developer</title>
 <link rel="stylesheet" href="style.css">
-
-<!-- Font -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
+<!-- CURSOR -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- PARTICLE CANVAS -->
+<canvas id="particles-canvas"></canvas>
 
 <!-- NAVBAR -->
-<header class="navbar">
-    <div class="nav-container">
-
-        <div class="logo">
-        Manh <span>.</span>
-        </div>
-
-        <nav class="nav-menu">
-            <a class="active" href="#">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-            <a href="#resume-section" class="resume">Resume</a>
-        </nav>
-
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <span class="logo-bracket">&lt;</span>Manh<span class="logo-dot">.</span><span class="logo-bracket">/&gt;</span>
     </div>
+    <nav class="nav-menu">
+      <a class="active" href="#hero" data-section="home">Home</a>
+      <a href="#about" data-section="about">About</a>
+      <a href="#projects" data-section="projects">Projects</a>
+      <a href="#skills" data-section="skills">Skills</a>
+      <a href="#contact" data-section="contact">Contact</a>
+      <a href="#resume-section" class="resume-link">Resume</a>
+    </nav>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
 </header>
 
-
-<!-- HERO SECTION -->
+<!-- HERO -->
 <section class="hero" id="hero">
+  <div class="hero-bg-glow glow-1"></div>
+  <div class="hero-bg-glow glow-2"></div>
+  <div class="hero-bg-glow glow-3"></div>
 
-    <p class="intro">Hey, I'm</p>
-
-    <h1>LE DUY MANH</h1>
-
-    <div class="badge">
-        Full Stack Developer
+  <div class="hero-content">
+    <div class="hero-tag reveal-up">
+      <span class="dot-pulse"></span> Available for work
     </div>
 
-    <p class="description">
-        I build and craft digital experiences <br>
-        that deliver <span>real impact</span>
+    <p class="intro reveal-up delay-1">Hey, I'm</p>
+
+    <h1 class="hero-name reveal-up delay-2">
+      <span class="name-line">LE DUY</span>
+      <span class="name-line gradient-text">MANH</span>
+    </h1>
+
+    <div class="typing-container reveal-up delay-3">
+      <span class="typing-prefix">I build </span>
+      <span class="typing-text" id="typing-text"></span>
+      <span class="typing-cursor">|</span>
+    </div>
+
+    <p class="description reveal-up delay-4">
+      Crafting digital experiences that deliver <span class="highlight-text">real impact</span>
+      through clean code and elegant design.
     </p>
 
-    <div class="hero-buttons">
-
-        <button class="primary-btn">
-            Let's Connect →
-        </button>
-
-        <div class="email">
-            mle529189@gmail.com
-        </div>
-
+    <div class="hero-buttons reveal-up delay-5">
+      <button class="primary-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        <span>Let's Connect</span>
+        <i class="fas fa-arrow-right"></i>
+      </button>
+      <a class="ghost-btn" href="#projects">
+        <span>View Work</span>
+        <i class="fas fa-eye"></i>
+      </a>
     </div>
 
-</section>
+    <div class="hero-email reveal-up delay-5">
+      <i class="fas fa-envelope"></i>
+      <span>mle529189@gmail.com</span>
+    </div>
+  </div>
 
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
 
 <!-- ABOUT -->
 <section class="about" id="about">
+  <div class="section-header reveal-up">
+    <div class="section-tag">01 — About</div>
+    <h2>About <span class="gradient-text">Me</span><span class="accent-dot">.</span></h2>
+    <p>Get to know me better</p>
+  </div>
 
-    <div class="section-header">
-        <h2>About Me<span>.</span></h2>
-        <p>Get to know me better</p>
+  <div class="about-content">
+    <div class="about-image-wrap reveal-left">
+      <div class="image-frame">
+        <img src="avatar.jpg" alt="Le Duy Manh" />
+        <div class="image-border-glow"></div>
+      </div>
+      <div class="floating-badge badge-react">⚛ React</div>
+      <div class="floating-badge badge-node">🟢 Node.js</div>
+      <div class="floating-badge badge-ts">🔷 TypeScript</div>
     </div>
 
+    <div class="about-text reveal-right">
+      <p>
+        I'm a passionate full-stack developer with expertise in building scalable web applications.
+        I specialize in <span class="inline-highlight">React, Next.js,</span> and <span class="inline-highlight">Node.js</span> ecosystems,
+        delivering clean code and exceptional user experiences.
+      </p>
+      <p style="margin-top:18px;">
+        With a keen eye for detail and a love for elegant solutions, I transform
+        complex problems into simple, beautiful, and intuitive designs.
+      </p>
 
-    <div class="about-content">
-
-        <div class="image-placeholder" >
-            <image src="avatar.jpg" style="width: 100%; height: 100%; border-radius: 10px; object-fit: cover">/</image>
+      <div class="about-stats">
+        <div class="stat" data-count="1" data-label="Years Exp.">
+          <div class="stat-icon">🚀</div>
+          <h3 class="counter">0</h3>
+          <p>Years Experience</p>
         </div>
-
-        <div class="about-text">
-
-            <p>
-                I'm a passionate full-stack developer with expertise in building scalable web applications.
-                I specialize in React, Next.js, and Node.js ecosystems, delivering clean code and exceptional
-                user experiences. With a keen eye for detail and a love for elegant solutions, I transform
-                complex problems into simple, beautiful, and intuitive designs.
-            </p>
-
-
-            <div class="about-stats">
-
-                <div class="stat">
-                    <h3>1</h3>
-                    <p>Years Experience</p>
-                </div>
-
-                <div class="stat">
-                    <h3>3</h3>
-                    <p>Projects Delivered</p>
-                </div>
-
-                <div class="stat">
-                    <h3>0</h3>
-                    <p>Happy Clients</p>
-                </div>
-
-                <div class="stat">
-                    <h3>🛠</h3>
-                    <p>Building Useful Tools</p>
-                </div>
-
-            </div>
-
+        <div class="stat" data-count="3" data-label="Projects">
+          <div class="stat-icon">📦</div>
+          <h3 class="counter">0</h3>
+          <p>Projects Delivered</p>
         </div>
-
+        <div class="stat">
+          <div class="stat-icon">☕</div>
+          <h3>∞</h3>
+          <p>Cups of Coffee</p>
+        </div>
+        <div class="stat">
+          <div class="stat-icon">🛠</div>
+          <h3>24/7</h3>
+          <p>Building Useful Tools</p>
+        </div>
+      </div>
     </div>
-
+  </div>
 </section>
-
-
 
 <!-- PROJECTS -->
 <section class="projects" id="projects">
+  <div class="section-header reveal-up">
+    <div class="section-tag">02 — Work</div>
+    <h2>Featured <span class="gradient-text">Projects</span><span class="accent-dot">.</span></h2>
+    <p>A selection of my recent work</p>
+  </div>
 
-    <div class="section-header">
-        <h2>Projects<span>.</span></h2>
-        <p>A selection of my recent work</p>
+  <div class="projects-grid">
+
+    <!-- Card 1 -->
+    <div class="project-card large reveal-up" data-tilt>
+      <div class="card-glow card-glow-pink"></div>
+      <div class="card-top">
+        <div class="project-num">01</div>
+        <div class="project-links">
+          <a href="https://github.com/manhleduy/ManhChat-frontend" target="_blank" title="Frontend"><i class="fab fa-github"></i> Frontend</a>
+          <a href="https://github.com/manhleduy/ManhChat-backend" target="_blank" title="Backend"><i class="fab fa-github"></i> Backend</a>
+        </div>
+      </div>
+      <h3>Manh<span class="card-title-accent">-Chat</span></h3>
+      <p>Real-time chat application with friend requests, groups, post feed, image/file sharing, and OTP-based registration. Fully real-time powered by Socket.io.</p>
+      <div class="tags-section">
+        <div class="tag-row"><span class="tag-label">Frontend</span>
+          <span class="tag pink">React</span><span class="tag pink">TypeScript</span><span class="tag pink">Tailwind</span><span class="tag pink">Redux</span>
+        </div>
+        <div class="tag-row"><span class="tag-label">Backend</span>
+          <span class="tag cyan">Node.js</span><span class="tag cyan">Express</span><span class="tag cyan">Socket.io</span>
+        </div>
+        <div class="tag-row"><span class="tag-label">Database</span>
+          <span class="tag purple">PostgreSQL</span>
+        </div>
+      </div>
     </div>
 
-
-    <div class="projects-grid">
-
-        <div class="project-card large">
-
-            <h3>Manh-Chat</h3>
-
-            <p>
-                Build a real-time chat app with the ability to connect for messaging, send images, and send files with friends, along with some features such as posting updates and viewing friends' posts. Allow users to send friend requests, create groups, and manage groups. Ensure that adding, deleting messages, and sending friend requests are real-time. Registration is done via OTP.
-            </p>
-            <div class="tags" >
-                <p>Frontend:</p>
-                <span>React</span>
-                <span>TypeScript</span>
-                <span>Tailwind CSS</span>
-                <span>Redux</span>
-            </div>
-            <div class="tags" >
-                <p>Backend:</p>
-                <span>Nodejs</span>
-                <span>JavaScript</span>
-                <span>Expressjs</span>
-                <span>Socket.io</span>
-            </div>
-            <div class="tags" >
-                <p>Database:</p>
-                <span>PostgreSQL</span>
-            </div>
-
-            <div style="display: flex; justify-content: space-between; align-items: first baseline; flex-direction: column;">Github
-                <a href="https://github.com/manhleduy/ManhChat-frontend" style="text-decoration: none; color: rgb(189, 23, 23);">Frontend -></a>
-                <a href="https://github.com/manhleduy/ManhChat-backend" style="text-decoration: none; color: rgb(189, 23, 23); margin-left: 10px">Backend -></a>
-            </div>
-
+    <!-- Card 2 -->
+    <div class="project-card reveal-up delay-1" data-tilt>
+      <div class="card-glow card-glow-cyan"></div>
+      <div class="card-top">
+        <div class="project-num">02</div>
+        <div class="project-links">
+          <a href="https://github.com/manhleduy/ManhFoodie-frontend" target="_blank"><i class="fab fa-github"></i> Frontend</a>
+          <a href="https://github.com/manhleduy/ManhFoodie-backend" target="_blank"><i class="fab fa-github"></i> Backend</a>
         </div>
-
-
-
-        <div class="project-card">
-
-            <h3>Manh Foodie</h3>
-
-            <p>
-                A simple PERN stack web app that allows users to place food orders, with features such as a shopping cart, letting them track their spending metrics by day, month, and year. State management is handled through useContext. The template is inspired by an online tutorial.
-            </p>
-
-            <div class="tags">
-                <span>Node.js</span>
-                <span>Expressjs</span>
-                <span>TypeScript</span>
-                <span>Tailwind CSS</span>
-                <span>Shadcn UI</span>
-                <span>Prisma</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: first baseline; flex-direction: column;">Github
-                <a href="https://github.com/manhleduy/ManhFoodie-frontend" style="text-decoration: none; color: rgb(189, 23, 23);">Frontend -></a>
-                <a href="https://github.com/manhleduy/ManhFoodie-backend" style="text-decoration: none; color: rgb(189, 23, 23); margin-left: 10px">Backend -></a>
-            </div>
-
+      </div>
+      <h3>Manh<span class="card-title-accent" style="color:#00d4ff">Foodie</span></h3>
+      <p>PERN stack food ordering app with shopping cart, spending metrics (daily/monthly/yearly), and state management via useContext.</p>
+      <div class="tags-section">
+        <div class="tag-row">
+          <span class="tag cyan">Node.js</span><span class="tag cyan">Express</span><span class="tag cyan">TypeScript</span>
+          <span class="tag cyan">Tailwind</span><span class="tag cyan">Prisma</span>
         </div>
-
-
-
-        <div class="project-card">
-
-            <h3>React-Docker</h3>
-
-            <p>
-                First impression about the Docker, using the Docker Compose to manage all the database, backend and frontend,using the 
-            </p>
-
-            <div class="tags">
-                <span>Nodejs</span>
-                <span>Expressjs</span>
-                <span>TypeScript</span>
-                <span>Docker</span>
-            </div>
-
-            <a class="link">Github -></a>
-
-        </div>
-
-
-        <div class="project-card empty">
-            Coming Soon
-        </div>
-
-        <div class="project-card empty">
-            Coming Soon
-        </div>
-
-
+      </div>
     </div>
 
+    <!-- Card 3 -->
+    <div class="project-card reveal-up delay-2" data-tilt>
+      <div class="card-glow card-glow-purple"></div>
+      <div class="card-top">
+        <div class="project-num">03</div>
+        <div class="project-links">
+          <a href="#"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+      <h3>React<span class="card-title-accent" style="color:#a855f7">-Docker</span></h3>
+      <p>Introduction to Docker and Docker Compose — containerizing a full-stack app with managed database, backend, and frontend services.</p>
+      <div class="tags-section">
+        <div class="tag-row">
+          <span class="tag purple">Node.js</span><span class="tag purple">Express</span><span class="tag purple">TypeScript</span><span class="tag purple">Docker</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Coming Soon cards -->
+    <div class="project-card empty reveal-up delay-3">
+      <div class="empty-inner">
+        <div class="empty-icon">🚧</div>
+        <span>Coming Soon</span>
+      </div>
+    </div>
+    <div class="project-card empty reveal-up delay-4">
+      <div class="empty-inner">
+        <div class="empty-icon">✨</div>
+        <span>Coming Soon</span>
+      </div>
+    </div>
+
+  </div>
 </section>
-
-
 
 <!-- SKILLS -->
 <section class="skills" id="skills">
+  <div class="section-header reveal-up">
+    <div class="section-tag">03 — Skills</div>
+    <h2>Skills & <span class="gradient-text">Expertise</span><span class="accent-dot">.</span></h2>
+    <p>Technologies I'm proficient with, from languages to frameworks and tools</p>
+  </div>
 
-    <div class="section-header">
-        <h2>Skills & Expertise<span>.</span></h2>
+  <div class="skills-wrapper">
 
-        <p>
-            A collection of technologies I'm proficient with, from languages to frameworks and tools
-        </p>
-    </div>
-
-
-    <div class="skills-group">
-
+    <div class="skill-category reveal-up delay-1">
+      <div class="skill-cat-header">
+        <span class="skill-cat-icon">🌐</span>
         <h4>Languages</h4>
-
-        <div class="skills-list">
-            <span>JavaScript</span>
-            <span>TypeScript</span>
-            <span>Python</span>
-            <span>HTML5</span>
-            <span>CSS3</span>
-            <span>Java</span>
-            <span>C#</span>
-        </div>
-
-
-        <h4>Frameworks & Libraries</h4>
-
-        <div class="skills-list">
-            <span>React</span>
-            <span>Next.js</span>
-            <span>Redux</span>
-            <span>ExpressJS</span>
-            <span>Node.js</span>
-            <span>Socket.io</span>
-            <span>React</span>
-            <span>Tailwind CSS</span>
-            <span>Framer Motion</span>
-            <span>React Hook Form</span>
-            
-        </div>
-
-
-        <h4>Databases</h4>
-
-        <div class="skills-list">
-            <span>PostgreSQL</span>
-            <span>MongoDB</span>
-            <span>MySQL</span>
-            <span>Cloudinary</span>
-        </div>
-
-
-        <h4>Tools & Platforms</h4>
-
-        <div class="skills-list">
-            <span>Git</span>
-            <span>Docker</span>
-            
-            <span>Vercel</span>
-            
-            <span>Figma</span>
-        
-        </div>
-
+      </div>
+      <div class="skills-list">
+        <span class="skill-badge" style="--clr:#f7df1e">JavaScript</span>
+        <span class="skill-badge" style="--clr:#3178c6">TypeScript</span>
+        <span class="skill-badge" style="--clr:#3572A5">Python</span>
+        <span class="skill-badge" style="--clr:#e34c26">HTML5</span>
+        <span class="skill-badge" style="--clr:#264de4">CSS3</span>
+        <span class="skill-badge" style="--clr:#b07219">Java</span>
+        <span class="skill-badge" style="--clr:#9b4993">C#</span>
+      </div>
     </div>
 
+    <div class="skill-category reveal-up delay-2">
+      <div class="skill-cat-header">
+        <span class="skill-cat-icon">⚙️</span>
+        <h4>Frameworks & Libraries</h4>
+      </div>
+      <div class="skills-list">
+        <span class="skill-badge" style="--clr:#61dafb">React</span>
+        <span class="skill-badge" style="--clr:#ffffff">Next.js</span>
+        <span class="skill-badge" style="--clr:#764abc">Redux</span>
+        <span class="skill-badge" style="--clr:#68a063">Node.js</span>
+        <span class="skill-badge" style="--clr:#353535">Express</span>
+        <span class="skill-badge" style="--clr:#010101">Socket.io</span>
+        <span class="skill-badge" style="--clr:#06b6d4">Tailwind</span>
+        <span class="skill-badge" style="--clr:#ff4154">Framer Motion</span>
+        <span class="skill-badge" style="--clr:#ec4899">React Hook Form</span>
+        <span class="skill-badge" style="--clr:#00b4d8">Shadcn UI</span>
+      </div>
+    </div>
+
+    <div class="skill-category reveal-up delay-3">
+      <div class="skill-cat-header">
+        <span class="skill-cat-icon">🗄️</span>
+        <h4>Databases</h4>
+      </div>
+      <div class="skills-list">
+        <span class="skill-badge" style="--clr:#336791">PostgreSQL</span>
+        <span class="skill-badge" style="--clr:#47a248">MongoDB</span>
+        <span class="skill-badge" style="--clr:#f29111">MySQL</span>
+        <span class="skill-badge" style="--clr:#3448c5">Cloudinary</span>
+      </div>
+    </div>
+
+    <div class="skill-category reveal-up delay-4">
+      <div class="skill-cat-header">
+        <span class="skill-cat-icon">🛠️</span>
+        <h4>Tools & Platforms</h4>
+      </div>
+      <div class="skills-list">
+        <span class="skill-badge" style="--clr:#f05032">Git</span>
+        <span class="skill-badge" style="--clr:#2496ed">Docker</span>
+        <span class="skill-badge" style="--clr:#000000">Vercel</span>
+        <span class="skill-badge" style="--clr:#f24e1e">Figma</span>
+      </div>
+    </div>
+
+  </div>
 </section>
-
-
 
 <!-- RESUME -->
 <section class="resume-section" id="resume-section">
-
-    <h2>Want to know more<span>?</span></h2>
-
-    <p>
-        Download my resume for a detailed look at my experience, skills, and education.
-    </p>
-
-    <button class="resume-btn">
-        View Resume
+  <div class="resume-inner reveal-up">
+    <div class="resume-bg-glow"></div>
+    <div class="section-tag" style="justify-content:center;display:flex;">04 — Resume</div>
+    <h2>Want to know <span class="gradient-text">more</span><span class="accent-dot">?</span></h2>
+    <p>Download my resume for a detailed look at my experience, skills, and education.</p>
+    <button class="primary-btn resume-btn">
+      <i class="fas fa-download"></i>
+      <span>Download Resume</span>
     </button>
-
+  </div>
 </section>
-
-
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
+  <div class="section-header reveal-up" style="text-align:center;">
+    <div class="section-tag" style="justify-content:center;display:flex;">05 — Contact</div>
+    <h2>Get in <span class="gradient-text">Touch</span><span class="accent-dot">.</span></h2>
+    <p>Have a project in mind or just want to say hello?</p>
+  </div>
 
-    <h2>Get in Touch<span>.</span></h2>
-
-    <p>
-        Have a project in mind or just want to say hello?
-    </p>
-
-    <div class="contact-info">
-
-        <p>mle529189@gmail.com</p>
-        <p>Ha Noi, Viet Nam</p>
-
+  <div class="contact-grid">
+    <div class="contact-card reveal-left">
+      <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+      <h4>Email</h4>
+      <a href="mailto:mle529189@gmail.com">mle529189@gmail.com</a>
     </div>
-
-
-    <div class="socials">
-
-        <a href="https://github.com/manhleduy">GitHub</a>
-        <a href="www.linkedin.com/in/mạnh-lê-197741333">LinkedIn</a>
-        
-
+    <div class="contact-card reveal-up delay-1">
+      <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+      <h4>Location</h4>
+      <p>Ha Noi, Viet Nam</p>
     </div>
+    <div class="contact-card reveal-right">
+      <div class="contact-icon"><i class="fas fa-clock"></i></div>
+      <h4>Availability</h4>
+      <p>Open to opportunities</p>
+    </div>
+  </div>
 
-    <button
-    
-     class="primary-btn">
-     
-        Send me an email
+  <div class="socials reveal-up delay-2">
+    <a href="https://github.com/manhleduy" target="_blank" class="social-btn github">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="https://www.linkedin.com/in/mạnh-lê-197741333" target="_blank" class="social-btn linkedin">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+  </div>
+
+  <div class="contact-cta reveal-up delay-3">
+    <button class="primary-btn" onclick="window.location.href='mailto:mle529189@gmail.com'">
+      <i class="fas fa-paper-plane"></i>
+      <span>Send me an email</span>
     </button>
-
+  </div>
 </section>
-
-
 
 <!-- FOOTER -->
 <footer>
-
-    © 2026 Le Duy Manh. All rights reserved.
-
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <span class="logo-bracket">&lt;</span>Manh<span class="logo-dot">.</span><span class="logo-bracket">/&gt;</span>
+    </div>
+    <p>© 2026 Le Duy Manh. Built with passion.</p>
+    <div class="footer-links">
+      <a href="https://github.com/manhleduy" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/mạnh-lê-197741333" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
 </footer>
 
+<script>
+// ── PARTICLE CANVAS ──────────────────────────────────────────
+const canvas = document.getElementById('particles-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, particles = [];
 
+function resize() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+const COLORS = ['#ff2d55','#ff6b35','#ffd60a','#06ffa5','#00d4ff','#a855f7'];
+
+class Particle {
+  constructor() { this.reset(); }
+  reset() {
+    this.x = Math.random() * W;
+    this.y = Math.random() * H;
+    this.r = Math.random() * 1.8 + 0.4;
+    this.dx = (Math.random() - 0.5) * 0.5;
+    this.dy = (Math.random() - 0.5) * 0.5;
+    this.color = COLORS[Math.floor(Math.random() * COLORS.length)];
+    this.alpha = Math.random() * 0.5 + 0.1;
+    this.life = Math.random() * 200 + 100;
+    this.age = 0;
+  }
+  update() {
+    this.x += this.dx; this.y += this.dy; this.age++;
+    if (this.age > this.life || this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
+  }
+  draw() {
+    ctx.save();
+    ctx.globalAlpha = this.alpha * (1 - this.age / this.life);
+    ctx.fillStyle = this.color;
+    ctx.shadowBlur = 8;
+    ctx.shadowColor = this.color;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+}
+
+for (let i = 0; i < 120; i++) particles.push(new Particle());
+
+function animateParticles() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => { p.update(); p.draw(); });
+  // draw connections
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 100) {
+        ctx.save();
+        ctx.globalAlpha = (1 - dist/100) * 0.12;
+        ctx.strokeStyle = particles[i].color;
+        ctx.lineWidth = 0.5;
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.stroke();
+        ctx.restore();
+      }
+    }
+  }
+  requestAnimationFrame(animateParticles);
+}
+animateParticles();
+</script>
+
+<script>
+// ── CUSTOM CURSOR ─────────────────────────────────────────────
+const dot = document.querySelector('.cursor-dot');
+const ring = document.querySelector('.cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+});
+
+(function animateCursor() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+  requestAnimationFrame(animateCursor);
+})();
+
+document.querySelectorAll('a, button, [data-tilt]').forEach(el => {
+  el.addEventListener('mouseenter', () => { ring.classList.add('cursor-hover'); dot.classList.add('cursor-hover'); });
+  el.addEventListener('mouseleave', () => { ring.classList.remove('cursor-hover'); dot.classList.remove('cursor-hover'); });
+});
+
+// ── TYPING EFFECT ─────────────────────────────────────────────
+const words = ['Web Apps.', 'Real-time Systems.', 'APIs & Backends.', 'Beautiful UIs.', 'Digital Experiences.'];
+let wi = 0, ci = 0, del = false;
+const typingEl = document.getElementById('typing-text');
+
+function type() {
+  const word = words[wi];
+  if (!del) {
+    typingEl.textContent = word.slice(0, ++ci);
+    if (ci === word.length) { del = true; setTimeout(type, 1600); return; }
+  } else {
+    typingEl.textContent = word.slice(0, --ci);
+    if (ci === 0) { del = false; wi = (wi + 1) % words.length; }
+  }
+  setTimeout(type, del ? 55 : 90);
+}
+type();
+
+// ── NAVBAR SCROLL ─────────────────────────────────────────────
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ── SCROLL REVEAL ─────────────────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); observer.unobserve(e.target); } });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+// ── COUNTER ANIMATION ─────────────────────────────────────────
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target.querySelector('.counter');
+      const target = parseInt(e.target.dataset.count);
+      if (el && target) {
+        let current = 0;
+        const step = Math.ceil(target / 40);
+        const interval = setInterval(() => {
+          current = Math.min(current + step, target);
+          el.textContent = current;
+          if (current >= target) clearInterval(interval);
+        }, 40);
+      }
+      counterObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat[data-count]').forEach(el => counterObserver.observe(el));
+
+// ── 3D TILT CARDS ─────────────────────────────────────────────
+document.querySelectorAll('[data-tilt]').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `perspective(800px) rotateY(${x * 10}deg) rotateX(${-y * 10}deg) translateY(-8px)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+  });
+});
+
+// ── HAMBURGER ─────────────────────────────────────────────────
+const ham = document.getElementById('hamburger');
+const menu = document.querySelector('.nav-menu');
+ham.addEventListener('click', () => {
+  ham.classList.toggle('open');
+  menu.classList.toggle('open');
+});
+</script>
 </body>
 </html>
